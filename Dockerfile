@@ -1,6 +1,4 @@
-FROM golang:1.10-alpine
+FROM maven:3-jdk-12
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git hugo
-RUN go get -d github.com/gohugoio/hugo
-RUN go get github.com/mindok/hugodeploy 
+RUN yum -y update
+RUN yum -y install pango libXcomposite libXcursor libXdamage libXext libXi libXtst cups-libs libXScrnSaver libXrandr GConf2 alsa-lib atk gtk3 ipa-gothic-fonts xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-utils xorg-x11-fonts-cyrillic xorg-x11-fonts-Type1 xorg-x11-fonts-misc git
